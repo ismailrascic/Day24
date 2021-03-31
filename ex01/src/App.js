@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 class App extends Component {
-  setMyStorage = () => {
+  setMyStorage ()  {
     document.cookie ="Year=2021";
     localStorage.setItem('Paragon', 'yes, but Arena first');
     sessionStorage.setItem('fronted','React');
@@ -10,7 +10,7 @@ class App extends Component {
   render(){
   return (
     <div className="App">
-      <button type="button" onClick={this.setMyStorage}>setMyStorage</button>
+      <button type="button" onClick={() => this.setMyStorage()}>setMyStorage</button>
     </div>
   );
   }  
@@ -19,3 +19,5 @@ class App extends Component {
 }
  
 export default App;
+
+

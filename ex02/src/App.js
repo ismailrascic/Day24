@@ -6,21 +6,22 @@ class App extends Component {
     localStorage.setItem('Paragon', 'yes, but Arena first');
     sessionStorage.setItem('fronted','React');
     }  
-    getMyStorage = () => {
+    getMyStorage ()  {
       let myCookieData = ("2021");
-       let myLocalStorageData = localStorage.getItem('yes, but Arena first');
-       let  mySessionStorageData =sessionStorage.getItem('React');
-     return{myCookieData,myLocalStorageData,mySessionStorageData}; 
-    
-     
+       let myLocalStorageData = localStorage.getItem('Paragon');
+       let  mySessionStorageData =sessionStorage.getItem('fronted');
+   
+       console.log(myCookieData);
+       console.log(myLocalStorageData);
+       console.log(mySessionStorageData);     
     }  
 
   render(){
   return (
     <div className="App">
-      <button type="button" onClick={this.setMyStorage()}>set</button>
-      <button type="button" onClick={this.getMyStorage()}>get</button>
-   <p>{this.mySessionStorageData}</p>
+      <button type="button" onClick={() => this.setMyStorage()}>setMyStorage</button>
+      <button type="button" onClick={() =>this.getMyStorage()}>getMyStorage</button>
+  
    </div>
 
   );
@@ -28,5 +29,4 @@ class App extends Component {
 
 
 }
-
 export default App;
